@@ -1,7 +1,7 @@
 {
   "name": "friend_finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Checkout my Github Repo: https://github.com/Knwhit20/friend_finder",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Knwhit20/friend_finder/issues"
   },
-  "homepage": "https://github.com/Knwhit20/friend_finder#readme"
+  "homepage": "https://github.com/Knwhit20/friend_finder#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

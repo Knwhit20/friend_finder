@@ -121,7 +121,7 @@
         <h3>Question 8</h3>
         <h5>this is question two</h5>
         <select class="col-md-4 custom-select custom-select-sm">
-            <option selected>Select an option</option>
+            <option class= "value" selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
@@ -134,7 +134,7 @@
         <h3>Question 9</h3>
         <h5>this is question two</h5>
         <select class="col-md-4 custom-select custom-select-sm">
-            <option selected>Select an option</option>
+            <option class= "value" selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
@@ -147,7 +147,7 @@
         <h3>Question 10</h3>
         <h5>this is question two</h5>
         <select class="col-md-4 custom-select custom-select-sm">
-            <option selected>Select an option</option>
+            <option class= "value" selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
@@ -175,6 +175,7 @@
                     event.preventDefault();
                     console.log($("#nameInput").val().trim())
                     console.log($("#imageLink").val().trim())
+                    console.log($("option").val())
                     // var newReservation = {
                     //     name: $("#reserve_name").val().trim(),
                     //     phone: $("#reserve_phone").val().trim(),
