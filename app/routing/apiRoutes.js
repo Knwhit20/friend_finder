@@ -4,9 +4,9 @@
 // LOAD DATA
 // We are linking our routes to a series of "data" sources.
 // These data sources hold arrays of information on table-data, waitinglist, etc.
-var data = require("../app/data/friends")
+var friends = require("../data/friends.js");
 
-ROUTING
+// ROUTING
 // ===============================================================================
 
 module.exports = function (app) {
@@ -17,5 +17,29 @@ module.exports = function (app) {
     // ---------------------------------------------------------------------------
 
     app.get("/api/friends", function (req, res) {
-        res.json(tableData);
-    });
+        res.json(friends);
+    });     
+    app.post("")
+};
+
+var newUser = {
+    name: $("#nameInput").val().trim(),
+    image: $("#imageLink").val().trim(),
+    scores: [$("#q1").val(),
+    $("#q2").val(),
+    $("#q3").val(),
+    $("#q4").val(),
+    $("#q5").val(),
+    $("#q6").val(),
+    $("#q7").val(),
+    $("#q8").val(),
+    $("#q9").val(),
+    $("#q10").val()
+
+    ]
+};
+for (i = 0; i < newUser.scores.length; i++) {
+    var difference = newUser.scores[i];
+    console.log(difference);
+    console.log(friends[i].scores)
+}

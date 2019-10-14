@@ -28,8 +28,8 @@
     
     <div class="container">
         <h3>Question 1</h3>
-        <h5>this is question one</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <h5></h5>
+        <select id="q1" class="col-md-4 custom-select custom-select-sm">
             <option selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -42,7 +42,7 @@
 
         <h3>Question 2</h3>
         <h5>this is question two</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q2"  class="col-md-4 custom-select custom-select-sm">
             <option selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -55,7 +55,7 @@
 
         <h3>Question 3</h3>
         <h5>this is question three</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q3"  class="col-md-4 custom-select custom-select-sm">
             <option selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -68,7 +68,7 @@
 
         <h3>Question 4</h3>
         <h5>this is question four</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q4" class="col-md-4 custom-select custom-select-sm">
             <option selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -81,7 +81,7 @@
 
         <h3>Question 5</h3>
         <h5>this is question five</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q5"  class="col-md-4 custom-select custom-select-sm">
             <option selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -94,7 +94,7 @@
 
         <h3>Question 6</h3>
         <h5>this is question six</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q6"  class="col-md-4 custom-select custom-select-sm">
             <option selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -107,7 +107,7 @@
 
         <h3>Question 7</h3>
         <h5>this is question two</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q7" class="col-md-4 custom-select custom-select-sm">
             <option selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -120,7 +120,7 @@
 
         <h3>Question 8</h3>
         <h5>this is question two</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q8"  class="col-md-4 custom-select custom-select-sm">
             <option class= "value" selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -133,7 +133,7 @@
 
         <h3>Question 9</h3>
         <h5>this is question two</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q9"  class="col-md-4 custom-select custom-select-sm">
             <option class= "value" selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -146,7 +146,7 @@
 
         <h3>Question 10</h3>
         <h5>this is question two</h5>
-        <select class="col-md-4 custom-select custom-select-sm">
+        <select id="q10"  class="col-md-4 custom-select custom-select-sm">
             <option class= "value" selected>Select an option</option>
             <option value="1">One (Strongly Disagree)</option>
             <option value="2">Two</option>
@@ -169,25 +169,50 @@
             </div>
         </footer>
         
-            <script type="text/javascript">
+            <script type="text/javascript" src="app/routing/apiRoutes.js">
                 // Question: What does this code do?
                 $("#submit").on("click", function (event) {
                     event.preventDefault();
-                    console.log($("#nameInput").val().trim())
-                    console.log($("#imageLink").val().trim())
-                    console.log($("option").val())
-                    // var newReservation = {
-                    //     name: $("#reserve_name").val().trim(),
-                    //     phone: $("#reserve_phone").val().trim(),
-                    //     email: $("#reserve_email").val().trim(),
-                    //     unique_id: $("#reserve_uniqueID").val().trim()
-                    // };
-                    // // Question: What does this code do??
-                    // $.post("/api/addReservation", newReservation)
-                    //     .then(function (data) {
-                    //         console.log("reserve.html", data);
-                    //         alert("Adding reservation...");
-                    //     });
+                    // console.log($("#nameInput").val().trim())
+                    // console.log($("#imageLink").val().trim())
+                    // console.log($("#q1").val())
+                    // console.log($("#q2").val())
+                    // console.log($("#q3").val())
+                    // console.log($("#q4").val())
+                    // console.log($("#q5").val())
+                    // console.log($("#q6").val())
+                    // console.log($("#q7").val())
+                    // console.log($("#q8").val())
+                    // console.log($("#q9").val())
+                    // console.log($("#q10").val())
+
+                    var newUser = {
+                        name: $("#nameInput").val().trim(),
+                        image: $("#imageLink").val().trim(),
+                        scores: [$("#q1").val(),
+                                $("#q2").val(),
+                                $("#q3").val(),
+                                $("#q4").val(),
+                                $("#q5").val(),
+                                $("#q6").val(),
+                                $("#q7").val(),
+                                $("#q8").val(),
+                                $("#q9").val(),
+                                $("#q10").val()
+                                
+                    ]};
+                    console.log(newUser)
+                      
+                    
+
+
+
+                        //loop through each score question, compare newUserScore and friendScore for the difference
+                        //save the diffence to an array for each question
+                        //sum the difference array = totalDifference
+                        //repeat for each friend
+                        //match = friend with smallest totalDifference
+
                 });
             </script>
 
