@@ -1,10 +1,10 @@
 var friends = [
     {
-        "name": "Kayne",
+        "name": "Monica",
         "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
             "scores": [
                 5,
-                5,
+                3,
                 5,
                 5,
                 5,
@@ -16,7 +16,7 @@ var friends = [
             ]
     },
     {
-        "name": "Courtney",
+        "name": "Rachel",
         "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores": [
             5,
@@ -32,7 +32,7 @@ var friends = [
         ]
     },
     {
-        "name": "Cameron",
+        "name": "Phoebe",
         "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores": [
             2,
@@ -48,7 +48,7 @@ var friends = [
         ]
     },
     {
-        "name": "Chris",
+        "name": "Ross",
         "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores": [
             5,
@@ -64,7 +64,7 @@ var friends = [
         ]
     },
     {
-        "name": "Val",
+        "name": "Chandler",
         "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores": [
             2,
@@ -79,6 +79,21 @@ var friends = [
             4
         ]
     },
-    
+    {
+        "name": "Joey",
+        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "scores": [
+            2,
+            3,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            5,
+            4
+        ]
+    }
 ];
 module.exports = friends;
