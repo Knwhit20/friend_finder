@@ -18,28 +18,52 @@ module.exports = function (app) {
 
     app.get("/api/friends", function (req, res) {
         res.json(friends);
-    });     
-    app.post("")
-};
+    
+    });  
+    
+    app.post("/api/friends", function(req, res) {
+        console.log(req.body);
+        for (i = 0; i < friends.length; i++){
+            console.log(friends[i]);
+            //loop through each score question, compare newUserScore and friendScore for the difference
+        //save the diffence to an array for each question
+        //sum the difference array = totalDifference
+        //repeat for each friend
+        //match = friend with smallest totalDifference
+        }
+        friends.push(req.body);
+        res.json(friends[0]);
+                        
+        
+        
+        
 
-var newUser = {
-    name: $("#nameInput").val().trim(),
-    image: $("#imageLink").val().trim(),
-    scores: [$("#q1").val(),
-    $("#q2").val(),
-    $("#q3").val(),
-    $("#q4").val(),
-    $("#q5").val(),
-    $("#q6").val(),
-    $("#q7").val(),
-    $("#q8").val(),
-    $("#q9").val(),
-    $("#q10").val()
 
-    ]
-};
-for (i = 0; i < newUser.scores.length; i++) {
-    var difference = newUser.scores[i];
-    console.log(difference);
-    console.log(friends[i].scores)
+
+
+
+
+
+    })
+    //  var newUser = {
+//     name: $("#nameInput").val().trim(),
+//         image: $("#imageLink").val().trim(),
+//             scores: [$("#q1").val(),
+//             $("#q2").val(),
+//             $("#q3").val(),
+//             $("#q4").val(),
+//             $("#q5").val(),
+//             $("#q6").val(),
+//             $("#q7").val(),
+//             $("#q8").val(),
+//             $("#q9").val(),
+//             $("#q10").val()
+
+//             ]
+// };
+
+// for (i = 0; i < newUser.scores.length; i++) {
+//     var difference = newUser.scores[i];
+//     console.log(difference);
+//     console.log(friends[i].scores)
 }

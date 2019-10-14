@@ -169,7 +169,7 @@
             </div>
         </footer>
         
-            <script type="text/javascript" src="app/routing/apiRoutes.js">
+            <script type="text/javascript">
                 // Question: What does this code do?
                 $("#submit").on("click", function (event) {
                     event.preventDefault();
@@ -201,17 +201,12 @@
                                 $("#q10").val()
                                 
                     ]};
-                    console.log(newUser)
-                      
                     
-
-
-
-                        //loop through each score question, compare newUserScore and friendScore for the difference
-                        //save the diffence to an array for each question
-                        //sum the difference array = totalDifference
-                        //repeat for each friend
-                        //match = friend with smallest totalDifference
+                    $.post("/api/friends",newUser,function(res){
+                        console.log(res);
+                    })
+                
+                
 
                 });
             </script>

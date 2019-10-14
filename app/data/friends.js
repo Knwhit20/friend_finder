@@ -79,37 +79,6 @@ var friends = [
             4
         ]
     },
-    {
-        "name": "Kyle",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "scores": [
-            4,
-            4,
-            3,
-            3,
-            3,
-            2,
-            2,
-            1,
-            1,
-            1
-        ]
-    },
-    {
-        "name": "Jimmy",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "scores": [
-            1,
-            1,
-            2,
-            2,
-            2,
-            3,
-            3,
-            3,
-            4,
-            4
-        ]
-    },
+    
 ];
 module.exports = friends;
