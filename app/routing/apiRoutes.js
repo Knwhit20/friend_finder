@@ -71,6 +71,7 @@ module.exports = function (app) {
                     smallest = totalDifference[i];
                     var bestFriend = i;
 
+
                 }
 
             }
@@ -80,7 +81,8 @@ module.exports = function (app) {
 
         friends.push(req.body);
         res.json(friends[0]);
-
+        
+        
 
 
     });
