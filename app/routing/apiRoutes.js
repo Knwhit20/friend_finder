@@ -18,18 +18,18 @@ module.exports = function (app) {
 
     app.get("/api/friends", function (req, res) {
         res.json(friends);
-    
-    });  
-    
-    app.post("/api/friends", function(req, res) {
+
+    });
+
+    app.post("/api/friends", function (req, res) {
         // console.log(req.body);
-        var newUser= req.body;
+        var newUser = req.body;
         var newuserName = req.body.name;
         var newuserScores = req.body.scores;
         var totalDifference = [];
 
         var compareUser = [];
-        compareUser[0] = new Array ();
+        compareUser[0] = new Array();
         compareUser[1] = new Array();
         compareUser[2] = new Array();
         compareUser[3] = new Array();
@@ -39,77 +39,49 @@ module.exports = function (app) {
 
         //function to assist with reduce
         function add(total, num) {
-            
+
             return total + num;
-            
+
         }
 
-       
 
-       if(friends.length > 1) {
-           for (i = 0; i < friends.length; i++){
-            //    console.log(friends[i].scores[0]);
-        
 
-               for (j = 0; j < 10; j++){
-                // console.log(newUser.scores[j]);
-                  var  compare = parseInt(friends[i].scores[j]) - parseInt(newUser.scores[j])
-                // console.log(compare)
-                   compareUser[i].push(Math.abs(compare));
-                   
+        if (friends.length > 1) {
+            for (i = 0; i < friends.length; i++) {
 
-               }
+                for (j = 0; j < 10; j++) {
+                    //loop through each score question, compare newUserScore and friendScore for the difference
+
+                    var compare = parseInt(friends[i].scores[j]) - parseInt(newUser.scores[j])
+                      //save the diffence to an array for each question
+                    compareUser[i].push(Math.abs(compare));
+
+                }
+                //sum the difference array = totalDifference
                 totalDifference.push(compareUser[i].reduce(add, 0));
-               //console.log(totalDifference);
-                //console.log(compareUser[i].reduce(add, 0));
+
             }
-           //console.log(compareUser);
-           console.log(totalDifference);
-       var smallest = totalDifference[0];
+
+            var smallest = totalDifference[0];
             var bestFriend = 0;
-           
-            for (i =1; i < totalDifference.length; i++) {
-               if (totalDifference[i] <= smallest){
-                smallest = totalDifference[i];   
-                var bestFriend = i;
-                   
-                  // if (tempNum <= totalDifference[i]){
-                 //      tempNum = totalDifference[i];   
-                  //  var bestFriend = i;
-                 //  }
 
-        // var smallest = totalDifference[0];
-        // for (var i=1; i<totalDifference.length; i++){
-        //     if(totalDifference[i] < smallest){
-        //         smallest = totalDifference
-        //     }
-        // }
+            // bestFriend = friend with smallest totalDifference
+            for (i = 1; i < totalDifference.length; i++) {
+                if (totalDifference[i] <= smallest) {
+                    smallest = totalDifference[i];
+                    var bestFriend = i;
 
-               }
-              
-           }
-           console.log("My Best Friend");
-           //console.log(friends[bestFriend]);
-           console.log(bestFriend);
+                }
+
+            }
+            console.log("My Best Friend is " + friends[bestFriend].name);
+
         }
-                
-            
-        //     //loop through each score question, compare newUserScore and friendScore for the difference
-
-
-        // //save the diffence to an array for each question
-        // //sum the difference array = totalDifference
-        // //repeat for each friend
-        // //match = friend with smallest totalDifference
-        // }
-
-
-
 
         friends.push(req.body);
         res.json(friends[0]);
-    
-    
+
+
 
     });
 };
