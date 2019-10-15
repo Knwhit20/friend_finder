@@ -2,7 +2,7 @@
 
 Checkout my Github Repo: https://github.com/Knwhit20/friend_finder
 
-Heroku Deployed Link: 
+Heroku Deployed Link: https://stroup-friend-finder.herokuapp.com/
 
 Instructions: Answer the survey to find your closest friend match!
 
